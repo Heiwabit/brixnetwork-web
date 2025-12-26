@@ -17,21 +17,7 @@
     <link rel="canonical" href="https://brixnetwork.org">
     
     <!-- Geographic Targeting -->
-    <meta name="geo.region" content="GB">
-    <meta name="geo.region" content="US">
-    <meta name="geo.region" content="DE">
-    <meta name="geo.region" content="NL">
-    <meta name="geo.region" content="FR">
-    <meta name="geo.region" content="ES">
-    <meta name="geo.region" content="IT">
-    <meta name="geo.region" content="PT">
-    <meta name="geo.region" content="SA">
-    <meta name="geo.region" content="OM">
-    <meta name="geo.region" content="YE">
-    <meta name="geo.region" content="BR">
-    <meta name="geo.region" content="RU">
-    <meta name="geo.region" content="IN">
-    <meta name="geo.placename" content="United Kingdom, United States, Germany, Netherlands, France, Spain, Italy, Portugal, Saudi Arabia, Oman, Yemen, Brazil, Russia, India">
+    <meta name="geo.region" content="EU">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="BriXnetwork.org - Digital Currency System">
@@ -411,23 +397,6 @@
                 document.getElementById('cookieConsent').style.display = 'block';
             }
         };
-
-        // Disable right-click context menu
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            return false;
-        });
-
-        // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-        document.addEventListener('keydown', function(e) {
-            if (e.keyCode == 123 || // F12
-                (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
-                (e.ctrlKey && e.shiftKey && e.keyCode == 74) || // Ctrl+Shift+J
-                (e.ctrlKey && e.keyCode == 85)) { // Ctrl+U
-                e.preventDefault();
-                return false;
-            }
-        });
 
         // Prevent inactive links from causing issues
         document.addEventListener('DOMContentLoaded', function() {
