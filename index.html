@@ -1,1 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self';">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="BriXnetwork - An experimental digital currency system built on Bitcoin 20.2 foundation. Open source PoW blockchain for global financial accessibility.">
+    <meta name="keywords" content="BriXnetwork, cryptocurrency, blockchain, digital currency, Bitcoin, PoW, proof of work, open source, financial system">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://brixnetwork.org">
+    
+    <!-- Geographic Targeting -->
+    <meta name="geo.region" content="EU">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="BriXnetwork.org - Digital Currency System">
+    <meta property="og:description" content="BriXnetwork - An experimental digital currency system built on Bitcoin 20.2 foundation">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brixnetwork.org">
+    <meta property="og:site_name" content="BriXnetwork">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BriXnetwork.org - Digital Currency System">
+    <meta name="twitter:description" content="BriXnetwork - An experimental digital currency system built on Bitcoin 20.2 foundation">
+    
+    <title>BriXnetwork.org - BriXnetwork</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #000;
+            padding: 1.5rem 0;
+            border-bottom: 2px solid #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .header-right {
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            font-size: 0.85rem;
+            text-align: right;
+            padding: 0.5rem 1rem;
+            border: 1px solid #00ff00;
+            background: rgba(0, 255, 0, 0.05);
+            max-width: 300px;
+            line-height: 1.4;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #0a0a0a;
+            border: 2px solid #fff;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        .download-section {
+            background: #0a0a0a;
+            padding: 2rem;
+            border: 2px solid #fff;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .download-section h3 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .download-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .download-btn {
+            display: block;
+            padding: 1rem 1.5rem;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #fff;
+        }
+
+        .download-btn:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: #0a0a0a;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid #333;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #fff;
+        }
+
+        .feature-card h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .section {
+            margin: 4rem 0;
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 0.5rem;
+        }
+
+        .goals-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .goals-list li {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: #0a0a0a;
+            border-left: 4px solid #fff;
+            border-radius: 4px;
+            color: #e0e0e0;
+        }
+
+        .links-section {
+            background: #0a0a0a;
+            padding: 2rem;
+            border: 2px solid #fff;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .links-section h3 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .link-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 2px solid #fff;
+            transition: all 0.3s;
+        }
+
+        .link-button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        footer {
+            background: #000;
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid #fff;
+            margin-top: 4rem;
+        }
+
+        .important-note {
+            background: #0a0a0a;
+            border: 2px solid #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .important-note h4 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .important-note p {
+            color: #e0e0e0;
+        }
+
+        .terminator-alert {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #000;
+            border: 3px solid #00ff00;
+            padding: 3rem 4rem;
+            z-index: 10000;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            font-size: 1.5rem;
+            text-align: center;
+            box-shadow: 0 0 30px #00ff00;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+            }
+            to {
+                box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+            }
+        }
+
+        .terminator-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-right {
+                max-width: 100%;
+                margin-top: 1rem;
+                font-size: 0.75rem;
+            }
+
+            #cookieConsent {
+                left: 10px !important;
+                right: 10px !important;
+                transform: none !important;
+                max-width: calc(100% - 20px) !important;
+                bottom: 10px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); max-width: 600px; background: #0a0a0a; padding: 1.5rem 2rem; border: 2px solid #00ff00; border-radius: 8px; z-index: 1000; box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);">
+        <p style="margin-bottom: 1rem; color: #e0e0e0; font-size: 0.95rem; line-height: 1.6;">
+            This website uses essential cookies to improve your experience and ensure proper functionality. Your privacy is important to us.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+            <button onclick="acceptCookies()" style="padding: 0.7rem 1.5rem; background: #00ff00; color: #000; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-family: 'Courier New', monospace; transition: all 0.3s;">ACCEPT</button>
+            <button onclick="declineCookies()" style="padding: 0.7rem 1.5rem; background: #000; color: #00ff00; border: 2px solid #00ff00; border-radius: 6px; font-weight: bold; cursor: pointer; font-family: 'Courier New', monospace; transition: all 0.3s;">DECLINE</button>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent Management
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = name + "=" + value + ";expires=" + d.toUTCString() + ";path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function acceptCookies() {
+            setCookie('cookieConsent', 'accepted', 365);
+            document.getElementById('cookieConsent').style.display = 'none';
+        }
+
+        function declineCookies() {
+            setCookie('cookieConsent', 'declined', 365);
+            document.getElementById('cookieConsent').style.display = 'none';
+        }
+
+        // Check if user has already responded to cookie consent
+        window.onload = function() {
+            const consent = getCookie('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookieConsent').style.display = 'block';
+            }
+        };
+
+        // Prevent inactive links from causing issues
+        document.addEventListener('DOMContentLoaded', function() {
+            // Block all disabled links
+            const disabledLinks = document.querySelectorAll('.disabled-link');
+            disabledLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showTerminatorAlert();
+                    return false;
+                });
+            });
+
+            // Also block links with href="#"
+            const inactiveLinks = document.querySelectorAll('a[href="#"]');
+            inactiveLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showTerminatorAlert();
+                    return false;
+                });
+            });
+        });
+
+        function showTerminatorAlert() {
+            const overlay = document.createElement('div');
+            overlay.className = 'terminator-overlay';
+            
+            const alert = document.createElement('div');
+            alert.className = 'terminator-alert';
+            alert.innerHTML = `
+                <div style="margin-bottom: 1rem; font-size: 2rem;">⚠ SYSTEM MESSAGE ⚠</div>
+                <div>PACKAGES WILL BE AVAILABLE</div>
+                <div>FOR DOWNLOAD IN THE</div>
+                <div>SECOND QUARTER OF JANUARY 2026</div>
+                <div style="margin-top: 2rem; cursor: pointer; font-size: 1.2rem;" onclick="closeTerminatorAlert()">[CLICK TO CLOSE]</div>
+            `;
+            
+            document.body.appendChild(overlay);
+            document.body.appendChild(alert);
+        }
+
+        function closeTerminatorAlert() {
+            const overlay = document.querySelector('.terminator-overlay');
+            const alert = document.querySelector('.terminator-alert');
+            if (overlay) overlay.remove();
+            if (alert) alert.remove();
+        }
+    </script>
+
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <h1>BriXnetwork.org</h1>
+                <p class="subtitle">BriXnetwork - Restoring equal opportunities for people worldwide</p>
+            </div>
+            <div class="header-right">
+                > OFFICIAL DISTRIBUTION SITE<br>
+                > SIGNED BINARIES ONLY<br>
+                > VERIFY BEFORE INSTALL
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2>What is BriXnetwork?</h2>
+            <p>
+                BriXnetwork is an experimental digital currency system. The BriXnetwork blockchain was built on the solid foundation of the Bitcoin system version 20.2.
+                It is designed so that both home users and corporate entities can easily use it.
+            </p>
+            <p>
+                <strong>BriXnetwork continues Satoshi Nakamoto's vision of a decentralized financial system that provides equal opportunities for users worldwide to participate and support network growth.</strong>
+            </p>
+        </section>
+
+        <section class="download-section">
+            <h3>Download BriXnetwork</h3>
+            <p style="color: #e0e0e0; margin-bottom: 1.5rem; font-size: 1.1rem;">
+                Links will be active in the second quarter of January 2026
+            </p>
+            <div class="download-links">
+                <a href="https://github.com/Heiwabit/brixnetwork-binaries/tree/main/BxnWin" class="download-btn disabled-link">BriXnetwork Windows Package</a>
+                <a href="https://github.com/Heiwabit/brixnetwork-binaries/tree/main/BxnLinux" class="download-btn disabled-link">BriXnetwork Linux Package</a>
+            </div>
+        </section>
+
+        <section class="links-section">
+            <h3>Resources</h3>
+            <p style="color: #e0e0e0; margin-bottom: 1.5rem; font-size: 1.1rem;">
+                Links will be active in the second quarter of January 2026
+            </p>
+            <a href="https://github.com/Heiwabit/brixnetwork" class="link-button disabled-link">GitHub Repository</a>
+            <a href="#" class="link-button">White Paper</a>
+            <a href="#" class="link-button">Documentation</a>
+        </section>
+
+        <section class="section">
+            <h2>Key Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Simplicity</h3>
+                    <p>Keeps the original Bitcoin design and includes SegWit</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Accessibility</h3>
+                    <p>Home users can run full nodes without high costs for hard drives or new hardware</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Eco-Friendly Mining</h3>
+                    <p>Older computers and laptops can mine blocks, reducing electronic waste and reusing existing hardware</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Fair System</h3>
+                    <p>Main focus on home users, without unusual protocols like Ordinals</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Decentralisation</h3>
+                    <p>Minimises corporate influence and supports equal access for all participants</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="important-note">
+            <h4>Digital Hygiene</h4>
+            <p>One of the key principles of BriXnetwork is maintaining a clean and efficient blockchain. The system intentionally excludes the Ordinals protocol, which helps preserve network clarity and optimal performance for essential transactions.</p>
+        </div>
+
+        <section class="section">
+            <h2>Project Goals</h2>
+            <ul class="goals-list">
+                <li>Provide a fair chance for new generations of users</li>
+                <li>Support growth of independent financial systems</li>
+                <li>Allow higher transaction capacity while keeping security intact</li>
+                <li>Maintain a simple, clear, and practical system</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 BriXnetwork.org - BriXnetwork is a fully Open Source Project.</p>
+        <p style="margin-top: 1rem; color: #e0e0e0;">BriXnetwork continues Satoshi Nakamoto's vision by implementing a Proof of Work consensus system, designed to create equal opportunities for new generations in the digital economy.</p>
+        <p style="margin-top: 1rem; color: #b0b0b0;">Giving everyone the opportunity to make transactions and payments for services and goods.</p>
+    </footer>
+</body>
+</html>
