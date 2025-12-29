@@ -8,7 +8,7 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="no-referrer">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self';">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="BriXnetwork - An experimental digital currency system. Open source blockchain for global financial accessibility.">
@@ -159,11 +159,34 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
 
         .header-right:hover {
             border-color: #00ff00;
             background: #000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 4px;
+            border: 1px solid #333;
+            transition: all 0.3s;
+        }
+
+        .logo-image:hover {
+            border-color: #00ff00;
+            transform: scale(1.05);
         }
 
         /* ============================================
@@ -790,6 +813,9 @@
                 font-size: 0.75rem;
                 padding: 0.8rem 1rem;
                 line-height: 1.4;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
             }
 
             .language-selector select {
@@ -797,6 +823,11 @@
                 padding: 0.5rem 0.8rem;
                 width: 100%;
                 max-width: 200px;
+            }
+
+            .logo-container {
+                align-self: flex-end;
+                margin-top: 0.5rem;
             }
 
             .hero {
@@ -1140,7 +1171,7 @@
                 simplicity: "Simplicity",
                 simplicity_desc: "Well-balanced technical parameters enable people to use BriXnetwork on regular computers including older laptops. BriXnetwork has SegWit which allows for low-cost transactions.",
                 accessibility: "Accessibility",
-                accessibility_desc: "Older hardware can run full nodes. This extends equipment lifespan and positively impacts the environment. System accessibility increases for everyone without expensive infrastructure."
+                accessibility_desc: "Older hardware can run full nodes. This extends equipment lifespan and positively impacts the environment. System accessibility increases for everyone without expensive infrastructure.",
                 eco_mining: "Eco-Friendly Mining",
                 eco_mining_desc: "Contributes to reducing electronic waste by allowing the use of older hardware. Computers and laptops from 2016 have sufficient CPU power to run a full node and mine blocks for which a reward is received in the form of coins.",
                 fair_system: "Fair System",
@@ -1148,15 +1179,15 @@
                 decentralization: "Decentralization",
                 decentralization_desc: "Minimizes corporate influence and supports equal access for all people.",
                 digital_hygiene: "Digital Hygiene",
-                digital_hygiene_desc: "BriXnetwork maintains a clean and efficient blockchain. System preserves network clarity and optimal performance for essential transactions. You can store transaction hashes and confirmations in op_return."
+                digital_hygiene_desc: "BriXnetwork maintains a clean and efficient blockchain. System preserves network clarity and optimal performance for essential transactions. You can store transaction hashes and confirmations in op_return.",
                 project_goals: "Project Goals",
                 goal_1: "Provide a fair chance for new generations of users",
                 goal_2: "Support growth of independent financial systems",
                 goal_3: "Allow higher transaction capacity while keeping security intact",
                 goal_4: "Maintain a simple, clear, and practical system",
                 footer_1: "2025 BriXnetwork.org - BriXnetwork is a fully Open Source Project.",
-                footer_2: "BriXnetwork implements a Proof of Work consensus system designed to create equal opportunities for new generations in the digital economy."
-                footer_3: "Giving everyone opportunity to make transactions and payments for services and goods."
+                footer_2: "BriXnetwork implements a Proof of Work consensus system designed to create equal opportunities for new generations in the digital economy.",
+                footer_3: "Giving everyone opportunity to make transactions and payments for services and goods.",
                 footer_4: "We wish you happy mining. Be good and do good.",
                 windows: "BriXnetwork Windows Package",
                 linux: "BriXnetwork Linux Package",
@@ -1164,7 +1195,7 @@
                 acceptBtn: "ACCEPT",
                 declineBtn: "DECLINE"
             },
-         ru: {
+            ru: {
                 hero_title: "BriXnetwork",
                 description_1: "Экспериментальная система цифровой валюты, разработанная с учетом доступности и простоты. Ее блокчейн был построен на основе проверенных библиотек и решений, позволяя как домашним пользователям, так и корпоративным организациям легко участвовать.",
                 description_2: "Он разработан так, чтобы как домашние пользователи, так и корпоративные пользователи могли легко его использовать.",
@@ -1425,6 +1456,7 @@
             }
         };
 
+        // Add click event listeners to all disabled links
         document.addEventListener('DOMContentLoaded', function() {
             const disabledLinks = document.querySelectorAll('.disabled-link');
             disabledLinks.forEach(function(link) {
@@ -1437,11 +1469,13 @@
 
             const inactiveLinks = document.querySelectorAll('a[href="#"]');
             inactiveLinks.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showTerminatorAlert();
-                    return false;
-                });
+                if (!link.classList.contains('disabled-link')) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        showTerminatorAlert();
+                        return false;
+                    });
+                }
             });
         });
 
@@ -1453,8 +1487,8 @@
             alert.className = 'terminator-alert';
             alert.innerHTML = `
                 <div style="margin-bottom: 1rem; font-size: 1.5rem; font-weight: bold;">COMING SOON</div>
-                <div style="margin-bottom: 2rem; font-size: 1rem; line-height: 1.8;">Packages and code will be available for download in January 2026</div>
-                <div style="margin-top: 2rem; cursor: pointer; font-size: 1rem;" onclick="closeTerminatorAlert()">[CLOSE]</div>
+                <div style="margin-bottom: 2rem; font-size: 1rem; line-height: 1.8;">Installation packages and source code will be available for download in the first quarter of January 2026</div>
+                <div style="margin-top: 2rem; cursor: pointer; font-size: 1rem; color: #00ff00; text-decoration: underline;" onclick="closeTerminatorAlert()">[CLOSE]</div>
             `;
             
             document.body.appendChild(overlay);
@@ -1474,24 +1508,39 @@
             <div class="header-left">
                 <h1>BriXnetwork.org</h1>
                 <p class="subtitle">Gives everyone equal access to participate in network and mine blocks.</p>
+                <div class="language-selector">
+                    <select onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="ru">Русский</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="uk">Українська</option>
+                    </select>
+                </div>
             </div>
-            <div class="header-right" style="display: flex; align-items: center; gap: 1.5rem;">
+            <div class="header-right">
                 <div>
                     > OFFICIAL DISTRIBUTION SITE<br>
                     > SIGNED BINARIES ONLY<br>
                     > VERIFY BEFORE INSTALL
                 </div>
-                <a href="https://postimages.org/" target="_blank" style="text-decoration: none;">
-                    <img src="https://i.postimg.cc/8Crmh8hX/brixnetwork-icon.jpg" alt="BriXnetwork Logo" style="width: 50px; height: 50px;">
-                </a>
+                <div class="logo-container">
+                    <img src="https://i.postimg.cc/8Crmh8hX/brixnetwork-icon.jpg" 
+                         alt="BriXnetwork Logo" 
+                         class="logo-image"
+                         onerror="this.style.display='none'">
+                </div>
             </div>
         </div>
     </div>
 
     <div class="container">
         <section class="hero">
+            <h2>BriXnetwork</h2>
             <p>
                 Experimental blockchain system. BriXnetwork was built on proven solutions known from Bitcoin 20.2. BriXnetwork has completely different genesis than Bitcoin. Notarial proofs in form of hashes in op_return.
+            </p>
+            <p>
+                Designed for both home users and corporate organizations to participate easily.
             </p>
         </section>
 
