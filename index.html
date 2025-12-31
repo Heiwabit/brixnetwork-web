@@ -52,10 +52,11 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #000;
-            color: #fff;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            color: #f0f0f0;
             line-height: 1.6;
             -ms-overflow-style: none;
+            min-height: 100vh;
         }
 
         /* ============================================
@@ -63,12 +64,28 @@
            ============================================ */
 
         .header-section {
-            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
             padding: 2rem 2rem;
-            border-bottom: 1px solid #333;
+            border-bottom: 2px solid #ff00ff;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 20px rgba(255, 0, 255, 0.2);
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
         }
 
         .header-content {
@@ -79,6 +96,8 @@
             gap: 3rem;
             align-items: flex-start;
             padding: 0 1rem;
+            position: relative;
+            z-index: 1;
         }
 
         .header-left {
@@ -90,16 +109,20 @@
 
         h1 {
             font-size: 2.5rem;
-            color: #fff;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin: 0;
             padding: 0;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 1px;
             line-height: 1.2;
+            text-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
         }
 
         .subtitle {
-            color: #999;
+            color: #aaa;
             font-size: 1rem;
             font-style: italic;
             margin: 0;
@@ -117,41 +140,44 @@
 
         .language-selector select {
             padding: 0.6rem 1rem;
-            background: #000;
-            color: #fff;
-            border: 1px solid #333;
+            background: #1a1a1a;
+            color: #f0f0f0;
+            border: 1px solid #ff00ff;
             border-radius: 4px;
             font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s;
             font-weight: 500;
             letter-spacing: 0.2px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.1);
         }
 
         .language-selector select:hover {
-            border-color: #555;
-            background: #111;
+            border-color: #00ffff;
+            background: #222;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
         }
 
         .language-selector select:focus {
             outline: none;
-            border-color: #666;
+            border-color: #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
         }
 
         .language-selector select option {
-            background: #000;
-            color: #fff;
+            background: #1a1a1a;
+            color: #f0f0f0;
             padding: 0.5rem;
         }
 
         .header-right {
             font-family: 'Courier New', monospace;
-            color: #00ff00;
+            color: #ff00ff;
             font-size: 0.85rem;
             text-align: right;
             padding: 1rem 1.5rem;
-            border: 1px solid #00ff00;
-            background: #000;
+            border: 1px solid #ff00ff;
+            background: rgba(26, 26, 26, 0.8);
             line-height: 1.6;
             border-radius: 4px;
             font-weight: 500;
@@ -162,11 +188,15 @@
             display: flex;
             align-items: center;
             gap: 1.5rem;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .header-right:hover {
-            border-color: #00ff00;
-            background: #000;
+            border-color: #00ffff;
+            background: rgba(26, 26, 26, 0.9);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
 
         .logo-container {
@@ -180,13 +210,15 @@
             height: 50px;
             object-fit: contain;
             border-radius: 4px;
-            border: 1px solid #333;
+            border: 1px solid #ff00ff;
             transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
         }
 
         .logo-image:hover {
-            border-color: #00ff00;
+            border-color: #00ffff;
             transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
         }
 
         /* ============================================
@@ -206,23 +238,48 @@
         .hero {
             text-align: center;
             padding: 3rem 2rem;
-            background: #000;
-            border: 1px solid #333;
-            border-radius: 4px;
+            background: rgba(26, 26, 26, 0.7);
+            border: 2px solid #ff00ff;
+            border-radius: 8px;
             margin-bottom: 2rem;
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+            border-radius: 10px;
+            z-index: -1;
+            opacity: 0.3;
+            animation: border-glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes border-glow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.6; }
         }
 
         .hero h2 {
             font-size: 2.5rem;
             margin-bottom: 1.2rem;
-            color: #fff;
-            font-weight: 700;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
             letter-spacing: 1px;
             line-height: 1.2;
             position: relative;
             z-index: 1;
+            text-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
         }
 
         .hero p {
@@ -230,14 +287,14 @@
             max-width: 800px;
             margin: 0 auto 1.5rem;
             line-height: 1.8;
-            color: #ccc;
+            color: #ddd;
             position: relative;
             z-index: 1;
             transition: color 0.3s ease;
         }
 
         .hero:hover p {
-            color: #ddd;
+            color: #fff;
         }
 
         /* ============================================
@@ -245,29 +302,53 @@
            ============================================ */
 
         .download-section {
-            background: #000;
+            background: rgba(26, 26, 26, 0.7);
             padding: 2rem 2rem;
-            border: 1px solid #333;
-            border-radius: 4px;
+            border: 2px solid #00ffff;
+            border-radius: 8px;
             margin: 2rem 0;
             position: relative;
             overflow: hidden;
             transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+        }
+
+        .download-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+            border-radius: 10px;
+            z-index: -1;
+            opacity: 0.3;
+            animation: border-glow-cyan 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes border-glow-cyan {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.6; }
         }
 
         .download-section:hover {
-            border-color: #555;
-            background: #111;
+            border-color: #ff00ff;
+            background: rgba(26, 26, 26, 0.9);
+            box-shadow: 0 0 40px rgba(255, 0, 255, 0.3);
+            transform: translateY(-3px);
         }
 
         .download-section h3 {
-            color: #fff;
+            color: #00ffff;
             margin-bottom: 1rem;
             font-size: 1.6rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             position: relative;
             z-index: 1;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .download-section > p {
@@ -280,7 +361,7 @@
         }
 
         .download-section:hover > p {
-            color: #ddd;
+            color: #fff;
         }
 
         .download-links {
@@ -295,24 +376,41 @@
         .download-btn {
             display: block;
             padding: 1rem 1.5rem;
-            background: #222;
+            background: linear-gradient(45deg, #222, #333);
             color: #fff;
             text-decoration: none;
             border-radius: 4px;
             font-weight: 600;
             text-align: center;
             transition: all 0.3s;
-            border: 1px solid #444;
+            border: 1px solid #ff00ff;
             font-size: 0.95rem;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
         }
 
         .download-btn:hover {
-            background: #333;
+            background: linear-gradient(45deg, #333, #444);
             color: #fff;
-            transform: translateY(-2px);
-            border-color: #666;
+            transform: translateY(-3px);
+            border-color: #00ffff;
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
         }
 
         .download-btn:active {
@@ -331,23 +429,42 @@
         }
 
         .feature-card {
-            background: #000;
+            background: rgba(26, 26, 26, 0.7);
             padding: 2rem 1.8rem;
-            border-radius: 4px;
-            border: 1px solid #333;
+            border-radius: 8px;
+            border: 2px solid #bf7fff;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(191, 127, 255, 0.2);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(191, 127, 255, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
         }
 
         .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: #555;
-            background: #111;
+            transform: translateY(-5px) scale(1.02);
+            border-color: #ff00ff;
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.3);
+            background: rgba(26, 26, 26, 0.9);
         }
 
         .feature-card h3 {
-            color: #fff;
+            color: #bf7fff;
             margin-bottom: 0.8rem;
             font-size: 1.3rem;
             font-weight: 700;
@@ -355,14 +472,16 @@
             position: relative;
             z-index: 1;
             transition: all 0.3s ease;
+            text-shadow: 0 0 10px rgba(191, 127, 255, 0.5);
         }
 
         .feature-card:hover h3 {
             letter-spacing: 0.5px;
+            color: #ff00ff;
         }
 
         .feature-card p {
-            color: #999;
+            color: #bbb;
             line-height: 1.7;
             font-size: 0.95rem;
             position: relative;
@@ -371,7 +490,7 @@
         }
 
         .feature-card:hover p {
-            color: #aaa;
+            color: #fff;
         }
 
         /* ============================================
@@ -379,29 +498,48 @@
            ============================================ */
 
         .links-section {
-            background: #000;
+            background: rgba(26, 26, 26, 0.7);
             padding: 2rem 2rem;
-            border: 1px solid #333;
-            border-radius: 4px;
+            border: 2px solid #ff00ff;
+            border-radius: 8px;
             margin: 2rem 0;
             position: relative;
             overflow: hidden;
             transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+        }
+
+        .links-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+            border-radius: 10px;
+            z-index: -1;
+            opacity: 0.3;
+            animation: border-glow 3s ease-in-out infinite alternate;
         }
 
         .links-section:hover {
-            border-color: #555;
-            background: #111;
+            border-color: #00ffff;
+            background: rgba(26, 26, 26, 0.9);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+            transform: translateY(-3px);
         }
 
         .links-section h3 {
-            color: #fff;
+            color: #ff00ff;
             margin-bottom: 1rem;
             font-size: 1.6rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             position: relative;
             z-index: 1;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
         }
 
         .links-section > p {
@@ -414,7 +552,7 @@
         }
 
         .links-section:hover > p {
-            color: #ddd;
+            color: #fff;
         }
 
         .links-container {
@@ -430,11 +568,11 @@
         .link-button {
             display: inline-block;
             padding: 0.9rem 2rem;
-            background: #222;
+            background: linear-gradient(45deg, #222, #333);
             color: #fff;
             text-decoration: none;
             border-radius: 4px;
-            border: 1px solid #444;
+            border: 1px solid #00ffff;
             transition: all 0.3s;
             font-weight: 600;
             font-size: 0.95rem;
@@ -442,13 +580,30 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .link-button:hover::before {
+            left: 100%;
         }
 
         .link-button:hover {
-            background: #333;
+            background: linear-gradient(45deg, #333, #444);
             color: #fff;
-            transform: translateY(-2px);
-            border-color: #666;
+            transform: translateY(-3px);
+            border-color: #ff00ff;
+            box-shadow: 0 5px 20px rgba(255, 0, 255, 0.3);
         }
 
         .link-button:active {
@@ -465,12 +620,16 @@
 
         .section h2 {
             font-size: 2rem;
-            color: #fff;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid #333;
+            border-bottom: 2px solid #ff00ff;
             padding-bottom: 0.8rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 0.5px;
+            text-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
         }
 
         .goals-list {
@@ -481,21 +640,22 @@
         .goals-list li {
             padding: 1rem;
             margin: 0.5rem 0;
-            background: #000;
-            border-left: 3px solid #666;
+            background: rgba(26, 26, 26, 0.7);
+            border-left: 4px solid #00ffff;
             border-radius: 4px;
-            color: #ccc;
-            border: 1px solid #333;
-            border-left: 3px solid #666;
+            color: #ddd;
+            border: 1px solid rgba(0, 255, 255, 0.3);
             transition: all 0.3s;
             font-size: 0.95rem;
+            backdrop-filter: blur(10px);
         }
 
         .goals-list li:hover {
-            transform: translateX(4px);
-            border-left-color: #999;
-            background: #111;
-            color: #ddd;
+            transform: translateX(5px);
+            border-left-color: #ff00ff;
+            background: rgba(26, 26, 26, 0.9);
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(255, 0, 255, 0.2);
         }
 
         .about-section {
@@ -506,40 +666,45 @@
         }
 
         .about-section p {
-            color: #ccc;
+            color: #ddd;
             line-height: 1.8;
             font-size: 0.95rem;
             padding: 1rem;
-            background: #000;
-            border: 1px solid #333;
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid rgba(191, 127, 255, 0.5);
             border-radius: 4px;
             transition: all 0.3s;
+            backdrop-filter: blur(10px);
         }
 
         .about-section p:hover {
-            border-color: #555;
-            background: #111;
-            color: #ddd;
+            border-color: #ff00ff;
+            background: rgba(26, 26, 26, 0.9);
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(255, 0, 255, 0.2);
         }
 
         .important-note {
-            background: #000;
-            border: 1px solid #333;
+            background: rgba(26, 26, 26, 0.7);
+            border: 2px solid #00ffff;
             padding: 1.5rem;
-            border-radius: 4px;
+            border-radius: 8px;
             margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
         }
 
         .important-note h4 {
-            color: #fff;
+            color: #00ffff;
             margin-bottom: 0.8rem;
             font-size: 1.3rem;
             font-weight: 700;
             letter-spacing: 0.3px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .important-note p {
-            color: #999;
+            color: #bbb;
             line-height: 1.7;
             font-size: 0.95rem;
         }
@@ -549,23 +714,25 @@
            ============================================ */
 
         footer {
-            background: #000;
+            background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
             padding: 2rem 2rem;
             text-align: center;
-            border-top: 1px solid #333;
+            border-top: 2px solid #ff00ff;
             margin-top: 3rem;
+            box-shadow: 0 -4px 20px rgba(255, 0, 255, 0.2);
         }
 
         footer p {
             margin: 0.8rem 0;
             font-size: 0.9rem;
-            color: #888;
+            color: #aaa;
             line-height: 1.6;
         }
 
         footer p:first-child {
-            color: #ccc;
+            color: #ff00ff;
             font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
         }
 
         /* ============================================
@@ -579,16 +746,18 @@
             left: 50%;
             transform: translateX(-50%);
             max-width: 600px;
-            background: #000;
+            background: rgba(26, 26, 26, 0.95);
             padding: 1.5rem 2rem;
-            border: 1px solid #00ff00;
-            border-radius: 4px;
+            border: 2px solid #00ffff;
+            border-radius: 8px;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
         }
 
         #cookieConsent p {
             margin-bottom: 1rem;
-            color: #ccc;
+            color: #ddd;
             font-size: 0.9rem;
             line-height: 1.6;
         }
@@ -610,22 +779,26 @@
         }
 
         #acceptBtn {
-            background: #00ff00;
+            background: linear-gradient(45deg, #00ffff, #20b2aa);
             color: #000;
         }
 
         #acceptBtn:hover {
-            background: #00dd00;
+            background: linear-gradient(45deg, #20b2aa, #00ffff);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
         }
 
         #declineBtn {
-            background: #000;
-            color: #00ff00;
-            border: 1px solid #00ff00;
+            background: rgba(26, 26, 26, 0.8);
+            color: #ff00ff;
+            border: 1px solid #ff00ff;
         }
 
         #declineBtn:hover {
-            background: #111;
+            background: rgba(26, 26, 26, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 255, 0.3);
         }
 
         /* ============================================
@@ -637,23 +810,26 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: #000;
-            border: 3px solid #00ff00;
+            background: rgba(26, 26, 26, 0.95);
+            border: 3px solid #ff00ff;
             padding: 3rem 4rem;
             z-index: 10000;
             font-family: 'Courier New', monospace;
-            color: #00ff00;
+            color: #ff00ff;
             font-size: 1.5rem;
             text-align: center;
-            animation: glow 1.5s ease-in-out infinite alternate;
+            animation: neon-glow 1.5s ease-in-out infinite alternate;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 50px rgba(255, 0, 255, 0.5);
+            border-radius: 8px;
         }
 
-        @keyframes glow {
+        @keyframes neon-glow {
             from {
-                box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+                box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, inset 0 0 20px rgba(255, 0, 255, 0.1);
             }
             to {
-                box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+                box-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff, 0 0 80px #ff00ff, inset 0 0 30px rgba(255, 0, 255, 0.2);
             }
         }
 
@@ -663,8 +839,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 9999;
+            backdrop-filter: blur(5px);
         }
 
         /* ============================================
@@ -1083,7 +1260,7 @@
            ============================================ */
 
         *:focus-visible {
-            outline: 2px solid #666;
+            outline: 2px solid #ff00ff;
             outline-offset: 2px;
         }
 
@@ -1492,7 +1669,7 @@
             alert.innerHTML = `
                 <div style="margin-bottom: 1rem; font-size: 1.5rem; font-weight: bold;">COMING SOON</div>
                 <div style="margin-bottom: 2rem; font-size: 1rem; line-height: 1.8;">Installation packages and source code will be available for download in the first quarter of January 2026</div>
-                <div style="margin-top: 2rem; cursor: pointer; font-size: 1rem; color: #00ff00; text-decoration: underline;" onclick="closeTerminatorAlert()">[CLOSE]</div>
+                <div style="margin-top: 2rem; cursor: pointer; font-size: 1rem; color: #ff00ff; text-decoration: underline;" onclick="closeTerminatorAlert()">[CLOSE]</div>
             `;
             
             document.body.appendChild(overlay);
@@ -1574,7 +1751,7 @@
             <h2>About Us</h2>
             <div class="about-section">
                 <p>BriXnetwork is open source blockchain project. Anyone can participate in network. Works on regular computers and older hardware.</p>
-                <p>BriXnetwork focuses on simple and practical system. Low transaction costs for all users worldwide. <span style="color: #ff9500;">Uses P2P port 8327 for network communication.</span></p>
+                <p>BriXnetwork focuses on simple and practical system. Low transaction costs for all users worldwide. <span style="color: #ff00ff;">Uses P2P port 8327 for network communication.</span></p>
             </div>
         </section>
 
