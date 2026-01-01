@@ -8,7 +8,11 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="no-referrer">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="BriXnetwork - Experimental open source blockchain for global accessibility.">
@@ -1761,8 +1765,8 @@
                 Links will be active in the first quarter of January 2026
             </p>
             <div class="download-links">
-                <a href="#" class="download-btn disabled-link">BriXnetwork Windows Package</a>
-                <a href="#" class="download-btn disabled-link">BriXnetwork Linux Package</a>
+                <a href="https://github.com/Heiwabit/brixnetwork-binaries/tree/main/BxnWin" class="download-btn disabled-link">BriXnetwork Windows Package</a>
+                <a href="https://github.com/Heiwabit/brixnetwork-binaries/tree/main/BxnLinux" class="download-btn disabled-link">BriXnetwork Linux Package</a>
             </div>
         </section>
 
@@ -1772,7 +1776,7 @@
                 Links will be active in the first quarter of January 2026
             </p>
             <div class="links-container">
-                <a href="#" class="link-button disabled-link">GitHub Repository</a>
+                <a href="https://github.com/Heiwabit/brixnetwork.git" class="link-button disabled-link">GitHub Repository</a>
                 <a href="#" class="link-button disabled-link">White Paper</a>
             </div>
         </section>
