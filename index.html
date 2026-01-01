@@ -11,8 +11,8 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self';">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="BriXnetwork - Experimental open source blockchain for global financial accessibility.">
-    <meta name="keywords" content="BriXnetwork, cryptocurrency, blockchain, digital currency, PoW, proof of work, open source, financial system">
+    <meta name="description" content="BriXnetwork - Experimental open source blockchain for global accessibility.">
+    <meta name="keywords" content="BriXnetwork, blockchain, PoW, proof of work, open source, digital system">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://brixnetwork.org">
     
@@ -21,15 +21,15 @@
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="BriXnetwork.org - blockchain">
-    <meta property="og:description" content="BriXnetwork - Global blockchain for people ">
+    <meta property="og:description" content="BriXnetwork - Global blockchain for People">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://brixnetwork.org">
     <meta property="og:site_name" content="BriXnetwork">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BriXnetwork.org - Digital Currency System">
-    <meta name="twitter:description" content="BriXnetwork - Experimental digital currency system">
+    <meta name="twitter:title" content="BriXnetwork.org - Blockchain System">
+    <meta name="twitter:description" content="BriXnetwork - Experimental blockchain system">
     
     <title>BriXnetwork.org - BriXnetwork</title>
     <style>
@@ -735,6 +735,16 @@
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
         }
 
+        .final-message {
+            background: linear-gradient(45deg, #00ffff, #20b2aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+
         /* ============================================
            COOKIE CONSENT
            ============================================ */
@@ -1098,6 +1108,10 @@
             footer p {
                 font-size: 0.85rem;
             }
+
+            .final-message {
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 600px) {
@@ -1183,6 +1197,10 @@
             footer p {
                 font-size: 0.8rem;
             }
+
+            .final-message {
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1252,6 +1270,10 @@
 
             footer p {
                 font-size: 0.75rem;
+            }
+
+            .final-message {
+                font-size: 0.85rem;
             }
         }
 
@@ -1332,7 +1354,7 @@
         const translations = {
             en: {
                 hero_title: "BriXnetwork",
-                description_1: "Experimental digital currency system designed for accessibility and simplicity. Blockchain was built on proven libraries and solutions enabling both home users and corporate organizations to participate easily.",
+                description_1: "Experimental blockchain system. Built on proven libraries and solutions enabling both home users and corporate organizations to participate easily.",
                 description_2: "It is designed so that both home users and corporate users can easily use it.",
                 download: "Download BriXnetwork",
                 download_info: "Links will be active in the first quarter of January 2026",
@@ -1341,30 +1363,30 @@
                 github: "GitHub Repository",
                 whitepaper: "White Paper",
                 about_us: "About Us",
-                about_us_1: "BriXnetwork is an open source blockchain project created to provide equal opportunities for everyone to participate in a decentralized financial system. Believe that blockchain technology should be accessible to all people.",
-                about_us_2: "Simply transparent digital currency system that respects user privacy and promotes financial independence. BriXnetwork is built on proven technologies and designed to work efficiently on regular computers and on older hardware.",
+                about_us_1: "BriXnetwork is open source blockchain project. Anyone can participate in network. Works on regular computers and older hardware.",
+                about_us_2: "BriXnetwork focuses on simple and practical system. Low transaction costs for all People worldwide.",
                 about_us_3: "We are committed to maintaining efficient blockchain that preserves network integrity while enabling low cost transactions for all worldwide. BriXnetwork uses P2P port 8327 for network communication.",
                 key_features: "Key Features",
-                simplicity: "Simplicity",
-                simplicity_desc: "Well balanced technical parameters enable people to use BriXnetwork on regular computers including older laptops. BriXnetwork has SegWit which allows for low cost transactions.",
-                accessibility: "Accessibility",
-                accessibility_desc: "Older hardware can run full nodes. This extends equipment lifespan and positively impacts the environment. System accessibility increases for everyone.",
-                eco_mining: "Eco-Friendly Mining",
-                eco_mining_desc: "Contributes to reducing electronic waste by allowing the use of older hardware. Computers and laptops from 2016 have sufficient CPU power to run a full node and mine blocks for which intial reward is received in the form of 100 coins.",
-                fair_system: "Fair System",
-                fair_system_desc: "Main focus on home users with a clean blockchain that preserves network clarity and optimal performance.",
-                decentralization: "Decentralization",
-                decentralization_desc: "Minimizes corporate influence and supports equal access for all people.",
-                digital_hygiene: "Digital Hygiene",
-                digital_hygiene_desc: "BriXnetwork simply efficient blockchain. System preserves network clarity and optimal performance for essential transactions. You can store transaction hashes and confirmations in op_return.",
+                simplicity: "Simple Design",
+                simplicity_desc: "Works on regular computers and older laptops. Has SegWit for low-cost transactions.",
+                accessibility: "Old Hardware Support",
+                accessibility_desc: "Computers from 2016 can run full nodes and mine blocks. Get rewards in units.",
+                eco_mining: "No Ordinals Protocol",
+                eco_mining_desc: "Blockchain stays focused on transactions. No extra protocols added.",
+                fair_system: "For Everyone",
+                fair_system_desc: "Open to all People. No corporate control. Equal access for everyone.",
+                decentralization: "op_return Support",
+                decentralization_desc: "Store transaction hashes and confirmations in op_return field.",
+                digital_hygiene: "Network Focus",
+                digital_hygiene_desc: "BriXnetwork simply efficient blockchain. System preserves network clarity and optimal performance for essential transactions. The absence of the Ordinals protocol is a key foundation. Ordinals are digital clutter that unnecessarily burden the blockchain. People can store document confirmations and purchase hashes in the op_return option.",
                 project_goals: "Project Goals",
-                goal_1: "Provide a fair chance for new generations of users",
-                goal_2: "Support growth of independent financial systems",
-                goal_3: "Allow higher transaction capacity while keeping security intact",
-                goal_4: "Maintain a simple and practical system",
-                footer_1: "2025 BriXnetwork.org - BriXnetwork is a fully Open Source Project.",
-                footer_2: "BriXnetwork implements a Proof of Work consensus system designed to create equal opportunities for new generations in the digital economy.",
-                footer_3: "Giving everyone opportunity to make transactions and payments for services and goods.",
+                goal_1: "Open blockchain for everyone",
+                goal_2: "Support independent systems",
+                goal_3: "Simple and practical design",
+                goal_4: "Low cost transactions",
+                footer_1: "© 2025 BriXnetwork.org - Open Source Project",
+                footer_2: "Proof of Work blockchain for everyone",
+                footer_3: "Simple transactions and payments",
                 footer_4: "We wish you happy mining. Be good and do good.",
                 windows: "BriXnetwork Windows Package",
                 linux: "BriXnetwork Linux Package",
@@ -1374,7 +1396,7 @@
             },
             de: {
                 hero_title: "BriXnetwork",
-                description_1: "Experimentelles digitales Währungssystem, das für Zugänglichkeit und Einfachheit entwickelt wurde. Die Blockchain wurde auf bewährten Bibliotheken und Lösungen aufgebaut, die es sowohl privaten Nutzern als auch Unternehmensorganisationen ermöglichen, einfach teilzunehmen.",
+                description_1: "Experimentelles Blockchain-System. Auf bewährten Bibliotheken und Lösungen aufgebaut, die es sowohl privaten Nutzern als auch Unternehmensorganisationen ermöglichen, einfach teilzunehmen.",
                 description_2: "Es ist so gestaltet, dass sowohl private Nutzer als auch Unternehmensnutzer es einfach verwenden können.",
                 download: "BriXnetwork herunterladen",
                 download_info: "Links werden im ersten Quartal Januar 2026 aktiv sein",
@@ -1383,30 +1405,30 @@
                 github: "GitHub Repository",
                 whitepaper: "Whitepaper",
                 about_us: "Über uns",
-                about_us_1: "BriXnetwork ist ein Open-Source-Blockchain-Projekt, das geschaffen wurde, um gleiche Chancen für alle zu schaffen, an einem dezentralen Finanzsystem teilzunehmen. Wir glauben, dass Blockchain-Technologie für alle Menschen zugänglich sein sollte.",
-                about_us_2: "Einfach transparentes digitales Währungssystem, das die Privatsphäre der Nutzer respektiert und finanzielle Unabhängigkeit fördert. BriXnetwork basiert auf bewährten Technologien und ist für einen effizienten Betrieb auf normalen Computern und älterer Hardware ausgelegt.",
+                about_us_1: "BriXnetwork ist ein Open-Source-Blockchain-Projekt. Jeder kann am Netzwerk teilnehmen. Funktioniert auf normalen Computern und älterer Hardware.",
+                about_us_2: "BriXnetwork konzentriert sich auf ein einfaches und praktisches System. Geringe Transaktionskosten für alle Menschen weltweit.",
                 about_us_3: "Wir verpflichten uns, eine effiziente Blockchain zu erhalten, die die Netzwerkintegrität bewahrt und gleichzeitig kostengünstige Transaktionen für alle weltweit ermöglicht. BriXnetwork verwendet für die Netzwerkkommunikation den P2P-Port 8327.",
                 key_features: "Hauptmerkmale",
-                simplicity: "Einfachheit",
-                simplicity_desc: "Gut ausgewogene technische Parameter ermöglichen es Menschen, BriXnetwork auf normalen Computern einschließlich älterer Laptops zu nutzen. BriXnetwork verfügt über SegWit, das kostengünstige Transaktionen ermöglicht.",
-                accessibility: "Zugänglichkeit",
-                accessibility_desc: "Ältere Hardware kann Full Nodes betreiben. Dies verlängert die Lebensdauer der Geräte und wirkt sich positiv auf die Umwelt aus. Die Systemzugänglichkeit erhöht sich für alle.",
-                eco_mining: "Umweltfreundliches Mining",
-                eco_mining_desc: "Trägt zur Reduzierung von Elektronikabfällen bei, indem die Verwendung älterer Hardware ermöglicht wird. Computer und Laptops von 2016 verfügen über ausreichende CPU-Leistung, um einen Full Node zu betreiben und Blöcke zu minen, wofür eine Anfangszahlung von 100 Münzen erhalten wird.",
-                fair_system: "Faires System",
-                fair_system_desc: "Hauptaugenmerk auf private Nutzer mit einer sauberen Blockchain, die Netzwerkkklarheit und optimale Leistung bewahrt.",
-                decentralization: "Dezentralisierung",
-                decentralization_desc: "Minimiert Unternehmenseinfluss und unterstützt gleichen Zugang für alle Menschen.",
-                digital_hygiene: "Digitale Hygiene",
-                digital_hygiene_desc: "BriXnetwork ist eine einfach effiziente Blockchain. Das System bewahrt Netzwerkkklarheit und optimale Leistung für wesentliche Transaktionen. Sie können Transaktions-Hashes und Bestätigungen in op_return speichern.",
+                simplicity: "Einfaches Design",
+                simplicity_desc: "Funktioniert auf normalen Computern und älteren Laptops. Verfügt über SegWit für kostengünstige Transaktionen.",
+                accessibility: "Alte Hardware-Unterstützung",
+                accessibility_desc: "Computer von 2016 können Full Nodes betreiben und Blöcke minen. Erhalte Belohnungen in Einheiten.",
+                eco_mining: "Kein Ordinals-Protokoll",
+                eco_mining_desc: "Die Blockchain konzentriert sich auf Transaktionen. Keine zusätzlichen Protokolle hinzugefügt.",
+                fair_system: "Für jeden",
+                fair_system_desc: "Offen für alle Menschen. Keine Unternehmenskontrolle. Gleicher Zugang für alle.",
+                decentralization: "op_return-Unterstützung",
+                decentralization_desc: "Speichere Transaktions-Hashes und Bestätigungen im op_return-Feld.",
+                digital_hygiene: "Netzwerkfokus",
+                digital_hygiene_desc: "BriXnetwork einfach effiziente Blockchain. Das System bewahrt Netzwerkkklarheit und optimale Leistung für wesentliche Transaktionen. Das Fehlen des Ordinals-Protokolls ist eine wichtige Grundlage. Ordinals sind digitaler Ballast, der die Blockchain unnötig belastet. Menschen können Dokumentenbestätigungen und Kauf-Hashes in der op_return-Option speichern.",
                 project_goals: "Projektziele",
-                goal_1: "Eine faire Chance für neue Generationen von Nutzern bieten",
-                goal_2: "Das Wachstum unabhängiger Finanzsysteme unterstützen",
-                goal_3: "Höhere Transaktionskapazität ermöglichen, während die Sicherheit erhalten bleibt",
-                goal_4: "Ein einfaches und praktisches System aufrechterhalten",
-                footer_1: "2025 BriXnetwork.org - BriXnetwork ist ein vollständiges Open-Source-Projekt.",
-                footer_2: "BriXnetwork implementiert ein Proof-of-Work-Konsenssystem, das entwickelt wurde, um gleiche Chancen für neue Generationen in der digitalen Wirtschaft zu schaffen.",
-                footer_3: "Jedem die Möglichkeit geben, Transaktionen und Zahlungen für Dienstleistungen und Waren durchzuführen.",
+                goal_1: "Offene Blockchain für alle",
+                goal_2: "Unabhängige Systeme unterstützen",
+                goal_3: "Einfaches und praktisches Design",
+                goal_4: "Geringe Transaktionskosten",
+                footer_1: "© 2025 BriXnetwork.org - Open-Source-Projekt",
+                footer_2: "Proof of Work Blockchain für alle",
+                footer_3: "Einfache Transaktionen und Zahlungen",
                 footer_4: "Wir wünschen Ihnen erfolgreiches Mining. Seien Sie gut und tun Sie Gutes.",
                 windows: "BriXnetwork Windows-Paket",
                 linux: "BriXnetwork Linux-Paket",
@@ -1416,7 +1438,7 @@
             },
             hi: {
                 hero_title: "BriXnetwork",
-                description_1: "एक प्रायोगिक डिजिटल मुद्रा प्रणाली जिसे पहुंच और सरलता को ध्यान में रखते हुए डिज़ाइन किया गया है। इसका ब्लॉकचेन सिद्ध पुस्तकालयों और समाधानों की नींव पर बनाया गया था, जो घर के उपयोगकर्ताओं और कॉर्पोरेट संगठनों दोनों को आसानी से भाग लेने में सक्षम बनाता है।",
+                description_1: "प्रायोगिक ब्लॉकचेन प्रणाली। सिद्ध पुस्तकालयों और समाधानों पर बनाया गया है जो घरेलू उपयोगकर्ताओं और कॉर्पोरेट संगठनों दोनों को आसानी से भाग लेने में सक्षम बनाता है।",
                 description_2: "यह इस तरह से डिज़ाइन किया गया है कि घर के उपयोगकर्ता और कॉर्पोरेट उपयोगकर्ता दोनों इसे आसानी से उपयोग कर सकें।",
                 download: "BriXnetwork डाउनलोड करें",
                 download_info: "लिंक जनवरी 2026 की पहली तिमाही में सक्रिय होंगे",
@@ -1424,37 +1446,41 @@
                 resources_info: "लिंक जनवरी 2026 की पहली तिमाही में सक्रिय होंगे",
                 github: "GitHub रिपोजिटरी",
                 whitepaper: "श्वेतपत्र",
+                about_us: "हमारे बारे में",
+                about_us_1: "BriXnetwork एक ओपन सोर्स ब्लॉकचेन प्रोजेक्ट है। कोई भी नेटवर्क में भाग ले सकता है। नियमित कंप्यूटरों और पुराने हार्डवेयर पर काम करता है।",
+                about_us_2: "BriXnetwork सरल और व्यावहारिक प्रणाली पर केंद्रित है। दुनिया भर के सभी लोगों के लिए कम लेनदेन लागत।",
+                about_us_3: "हम एक कुशल ब्लॉकचेन बनाए रखने के लिए प्रतिबद्ध हैं जो नेटवर्क अखंडता को संरक्षित करते हुए दुनिया भर में सभी के लिए कम लागत वाले लेनदेन को सक्षम बनाता है। BriXnetwork नेटवर्क संचार के लिए P2P पोर्ट 8327 का उपयोग करता है।",
                 key_features: "मुख्य विशेषताएं",
-                simplicity: "सरलता",
-                simplicity_desc: "अच्छी तरह से संतुलित तकनीकी पैरामीटर लोगों को नियमित कंप्यूटरों पर BriXnetwork का उपयोग करने में सक्षम बनाते हैं, जिसमें पुराने लैपटॉप भी शामिल हैं। BriXnetwork में SegWit है, जो कम लागत वाले लेनदेन की अनुमति देता है।",
-                accessibility: "पहुंच",
-                accessibility_desc: "पुरानी हार्डवेयर पूर्ण नोड्स चला सकती है। यह उपकरण के जीवनकाल को बढ़ाता है और पर्यावरण को सकारात्मक रूप से प्रभावित करता है। महंगे बुनियादी ढांचे के बिना सभी के लिए सिस्टम की पहुंच बढ़ती है।",
-                eco_mining: "पर्यावरण अनुकूल खनन",
-                eco_mining_desc: "पुराने हार्डवेयर के उपयोग की अनुमति देकर इलेक्ट्रॉनिक कचरे को कम करने में योगदान देता है। 2016 के कंप्यूटर और लैपटॉप में एक पूर्ण नोड चलाने और ब्लॉक माइन करने के लिए पर्याप्त CPU शक्ति होती है, जिसके लिए सिक्कों के रूप में एक इनाम मिलता है।",
-                fair_system: "न्यायपूर्ण प्रणाली",
-                fair_system_desc: "घर के उपयोगकर्ताओं पर मुख्य ध्यान, एक स्वच्छ ब्लॉकचेन के साथ जो नेटवर्क की स्पष्टता और इष्टतम प्रदर्शन को संरक्षित करता है।",
-                decentralization: "विकेंद्रीकरण",
-                decentralization_desc: "कॉर्पोरेट प्रभाव को कम करता है और सभी लोगों के लिए समान पहुंच का समर्थन करता है।",
-                digital_hygiene: "डिजिटल स्वच्छता",
-                digital_hygiene_desc: "BriXnetwork एक स्वच्छ और कुशल ब्लॉकचेन बनाए रखता है। सिस्टम आवश्यक लेनदेन के लिए नेटवर्क की स्पष्टता और इष्टतम प्रदर्शन को संरक्षित करता है। आप op_return में लेनदेन हैश और पुष्टि संग्रहीत कर सकते हैं।",
+                simplicity: "सरल डिजाइन",
+                simplicity_desc: "नियमित कंप्यूटरों और पुराने लैपटॉप पर काम करता है। कम लागत वाले लेनदेन के लिए SegWit है।",
+                accessibility: "पुराने हार्डवेयर समर्थन",
+                accessibility_desc: "2016 के कंप्यूटर पूर्ण नोड चला सकते हैं और ब्लॉक माइन कर सकते हैं। इकाइयों में पुरस्कार प्राप्त करें।",
+                eco_mining: "कोई ऑर्डिनल्स प्रोटोकॉल नहीं",
+                eco_mining_desc: "ब्लॉकचेन लेनदेन पर केंद्रित रहता है। कोई अतिरिक्त प्रोटोकॉल जोड़ा नहीं गया।",
+                fair_system: "सभी के लिए",
+                fair_system_desc: "सभी लोगों के लिए खुला। कोई कॉर्पोरेट नियंत्रण नहीं। सभी के लिए समान पहुंच।",
+                decentralization: "op_return समर्थन",
+                decentralization_desc: "लेनदेन हैश और पुष्टि को op_return फ़ील्ड में संग्रहीत करें।",
+                digital_hygiene: "नेटवर्क फोकस",
+                digital_hygiene_desc: "BriXnetwork बस कुशल ब्लॉकचेन। सिस्टम आवश्यक लेनदेन के लिए नेटवर्क स्पष्टता और इष्टतम प्रदर्शन को संरक्षित करता है। ऑर्डिनल्स प्रोटोकॉल की अनुपस्थिति एक प्रमुख आधार है। ऑर्डिनल्स डिजिटल अव्यवस्था हैं जो अनावश्यक रूप से ब्लॉकचेन को बोझिल करते हैं। लोग op_return विकल्प में दस्तावेज़ पुष्टि और खरीद हैश संग्रहीत कर सकते हैं।",
                 project_goals: "परियोजना लक्ष्य",
-                goal_1: "नए पीढ़ी के उपयोगकर्ताओं के लिए एक न्यायपूर्ण मौका प्रदान करें",
-                goal_2: "स्वतंत्र वित्तीय प्रणालियों की वृद्धि का समर्थन करें",
-                goal_3: "सुरक्षा को बनाए रखते हुए उच्च लेनदेन क्षमता की अनुमति दें",
-                goal_4: "एक सरल, स्पष्ट और व्यावहारिक प्रणाली बनाए रखें",
-                footer_1: "2025 BriXnetwork.org - BriXnetwork एक पूरी तरह से खुली स्रोत परियोजना है।",
-                footer_2: "BriXnetwork Proof of Work सर्वसम्मति प्रणाली को लागू करता है, जिसे डिजिटल अर्थव्यवस्था में नई पीढ़ियों के लिए समान अवसर बनाने के लिए डिज़ाइन किया गया है।",
-                footer_3: "सभी को सेवाओं और वस्तुओं के लिए लेनदेन और भुगतान करने का अवसर दे रहे हैं।",
-                footer_4: "हम आपको खुश खनन की कामना करते हैं। अच्छे बनो और अच्छा करो।",
-                windows: "Windows के लिए BriXnetwork पैकेज",
-                linux: "Linux के लिए BriXnetwork पैकेज",
+                goal_1: "सभी के लिए खुला ब्लॉकचेन",
+                goal_2: "स्वतंत्र प्रणालियों का समर्थन करें",
+                goal_3: "सरल और व्यावहारिक डिजाइन",
+                goal_4: "कम लेनदेन लागत",
+                footer_1: "© 2025 BriXnetwork.org - ओपन सोर्स प्रोजेक्ट",
+                footer_2: "सभी के लिए प्रूफ ऑफ वर्क ब्लॉकचेन",
+                footer_3: "सरल लेनदेन और भुगतान",
+                footer_4: "हम आपको खुशखनिकी की कामना करते हैं। अच्छे बनो और अच्छा करो।",
+                windows: "BriXnetwork विंडोज पैकेज",
+                linux: "BriXnetwork लिनक्स पैकेज",
                 cookieText: "यह वेबसाइट आपके अनुभव को बेहतर बनाने और उचित कार्यप्रणाली सुनिश्चित करने के लिए आवश्यक कुकीज़ का उपयोग करती है। आपकी गोपनीयता हमारे लिए महत्वपूर्ण है।",
                 acceptBtn: "स्वीकार करें",
                 declineBtn: "अस्वीकार करें"
             },
             uk: {
                 hero_title: "BriXnetwork",
-                description_1: "Експериментальна система цифрової валюти, розроблена з урахуванням доступності та простоти. Її блокчейн був побудований на основі перевірених бібліотек та рішень, дозволяючи як домашнім користувачам, так і корпоративним організаціям легко брати участь.",
+                description_1: "Експериментальна блокчейн система. Побудована на перевірених бібліотеках та рішеннях, що дозволяють як домашнім користувачам, так і корпоративним організаціям легко брати участь.",
                 description_2: "Він розроблений так, щоб як домашні користувачі, так і корпоративні користувачі могли його легко використовувати.",
                 download: "Завантажити BriXnetwork",
                 download_info: "Посилання будуть активні в першому кварталі січня 2026 року",
@@ -1462,31 +1488,35 @@
                 resources_info: "Посилання будуть активні в першому кварталі січня 2026 року",
                 github: "Репозиторій GitHub",
                 whitepaper: "Біла книга",
-                key_features: "Ключові Особливості",
-                simplicity: "Простота",
-                simplicity_desc: "Добре збалансовані технічні параметри дозволяють людям використовувати BriXnetwork на звичайних комп'ютерах, включаючи старі ноутбуки. У BriXnetwork є SegWit, що забезпечує дешеві транзакції.",
-                accessibility: "Доступність",
-                accessibility_desc: "Старе обладнання може запускати повні вузли. Це продовжує термін служби обладнання та позитивно впливає на навколишнє середовище. Доступність системи зростає для всіх без дорогої інфраструктури.",
-                eco_mining: "Екологічна Добич",
-                eco_mining_desc: "Сприяє зменшенню електронних відходів, дозволяючи використовувати старе обладнання. Комп'ютери та ноутбуки 2016 року мають достатню обчислювальну потужність процесора для запуску повного вузла та видобутку блоків, за що отримується винагорода у вигляді монет.",
-                fair_system: "Справедлива Система",
-                fair_system_desc: "Основний акцент на домашніх користувачів з чистим блокчейном, який зберігає ясність мережі та оптимальну продуктивність.",
-                decentralization: "Децентралізація",
-                decentralization_desc: "Мінімізує корпоративний вплив та підтримує рівний доступ для всіх людей.",
-                digital_hygiene: "Цифрова Гігієна",
-                digital_hygiene_desc: "BriXnetwork підтримує чистий та ефективний блокчейн. Система зберігає ясність мережі та оптимальну продуктивність для важливих транзакцій. Ви можете зберігати хеші транзакцій та підтвердження в op_return.",
-                project_goals: "Цілі Проекту",
-                goal_1: "Надати справедливий шанс для нових поколінь користувачів",
-                goal_2: "Підтримувати зростання незалежних фінансових систем",
-                goal_3: "Дозволити вищу пропускну здатність транзакцій при збереженні безпеки",
-                goal_4: "Підтримувати просту, ясну та практичну систему",
-                footer_1: "2025 BriXnetwork.org - BriXnetwork - це повністю відкритий проект.",
-                footer_2: "BriXnetwork реалізує систему консенсусу Proof of Work, розроблену для створення рівних можливостей для нових поколінь у цифровій економіці.",
-                footer_3: "Даючи кожному можливість здійснювати транзакції та платежі за послуги та товари.",
-                footer_4: "Бажаємо вам щасливого видобування. Будьте добрі та робіть добро.",
+                about_us: "Про нас",
+                about_us_1: "BriXnetwork - проект блокчейн з відкритим вихідним кодом. Будь-хто може брати участь у мережі. Працює на звичайних комп'ютерах та старому обладнанні.",
+                about_us_2: "BriXnetwork зосереджено на простій та практичній системі. Низька вартість транзакцій для всіх людей у всьому світі.",
+                about_us_3: "Ми зобов'язані підтримувати ефективний блокчейн, який зберігає цілісність мережі, забезпечуючи низьку вартість транзакцій для всіх у всьому світі. BriXnetwork використовує P2P порт 8327 для мережевого зв'язку.",
+                key_features: "Ключові особливості",
+                simplicity: "Простий дизайн",
+                simplicity_desc: "Працює на звичайних комп'ютерах та старіших ноутбуках. Має SegWit для дешевих транзакцій.",
+                accessibility: "Підтримка старого обладнання",
+                accessibility_desc: "Комп'ютери 2016 року можуть запускати повні вузли та видобувати блоки. Отримуйте винагороду в одиницях.",
+                eco_mining: "Відсутність протоколу Ordinals",
+                eco_mining_desc: "Блокчейн зосереджений на транзакціях. Жодних додаткових протоколів не додано.",
+                fair_system: "Для кожного",
+                fair_system_desc: "Відкрито для всіх людей. Жодного корпоративного контролю. Рівний доступ для всіх.",
+                decentralization: "Підтримка op_return",
+                decentralization_desc: "Зберігайте хеші транзакцій та підтвердження в полі op_return.",
+                digital_hygiene: "Фокус мережі",
+                digital_hygiene_desc: "BriXnetwork просто ефективний блокчейн. Система зберігає ясність мережі та оптимальну продуктивність для важливих транзакцій. Відсутність протоколу Ordinals є ключовою основою. Ordinals - це цифровий сміття, яке непотрібно навантажує блокчейн. Люди можуть зберігати підтвердження документів та хеші покупок у опції op_return.",
+                project_goals: "Цілі проекту",
+                goal_1: "Відкритий блокчейн для всіх",
+                goal_2: "Підтримка незалежних систем",
+                goal_3: "Простий та практичний дизайн",
+                goal_4: "Низька вартість транзакцій",
+                footer_1: "© 2025 BriXnetwork.org - Відкритий проект",
+                footer_2: "Proof of Work блокчейн для всіх",
+                footer_3: "Прості транзакції та платежі",
+                footer_4: "Бажаємо вам щасливого видобутку. Будьте добрими та робіть добро.",
                 windows: "Пакет BriXnetwork для Windows",
                 linux: "Пакет BriXnetwork для Linux",
-                cookieText: "Цей веб-сайт використовує необхідні файли cookie для поліпшення вашого досвіду та забезпечення належного функціонування. Ваша конфіденційність важлива для нас.",
+                cookieText: "Цей веб-сайт використовує необхідні файли cookie для покращення вашого досвіду та забезпечення належного функціонування. Ваша конфіденційність важлива для нас.",
                 acceptBtn: "ПРИЙНЯТИ",
                 declineBtn: "ВІДХИЛИТИ"
             }
@@ -1576,7 +1606,7 @@
                 
                 const footerPs = document.querySelectorAll('footer p');
                 if (footerPs.length >= 4) {
-                    footerPs[0].textContent = '© ' + t.footer_1;
+                    footerPs[0].textContent = t.footer_1;
                     footerPs[1].textContent = t.footer_2;
                     footerPs[2].textContent = t.footer_3;
                     footerPs[3].textContent = t.footer_4;
@@ -1751,7 +1781,7 @@
             <h2>About Us</h2>
             <div class="about-section">
                 <p>BriXnetwork is open source blockchain project. Anyone can participate in network. Works on regular computers and older hardware.</p>
-                <p>BriXnetwork focuses on simple and practical system. Low transaction costs for all users worldwide. <span style="color: #00ffff;">Uses P2P port 8327 for network communication.</span></p>
+                <p>BriXnetwork focuses on simple and practical system. Low transaction costs for all People worldwide. <span style="color: #00ffff;">Uses P2P port 8327 for network communication.</span></p>
             </div>
         </section>
 
@@ -1764,7 +1794,7 @@
                 </div>
                 <div class="feature-card">
                     <h3>Old Hardware Support</h3>
-                    <p>Computers from 2016 can run full nodes and mine blocks. Get rewards in coins.</p>
+                    <p>Computers from 2016 can run full nodes and mine blocks. Get rewards in units.</p>
                 </div>
                 <div class="feature-card">
                     <h3>No Ordinals Protocol</h3>
@@ -1772,7 +1802,7 @@
                 </div>
                 <div class="feature-card">
                     <h3>For Everyone</h3>
-                    <p>Open to all users. No corporate control. Equal access for everyone.</p>
+                    <p>Open to all People. No corporate control. Equal access for everyone.</p>
                 </div>
                 <div class="feature-card">
                     <h3>op_return Support</h3>
@@ -1783,14 +1813,14 @@
 
         <div class="important-note">
             <h4>Network Focus</h4>
-            <p>BriXnetwork blockchain focuses on transactions. No Ordinals protocol. Simple and practical system.</p>
+            <p>BriXnetwork simply efficient blockchain. System preserves network clarity and optimal performance for essential transactions. The absence of the Ordinals protocol is a key foundation. Ordinals are digital clutter that unnecessarily burden the blockchain. People can store document confirmations and purchase hashes in the op_return option.</p>
         </div>
 
         <section class="section">
             <h2>Project Goals</h2>
             <ul class="goals-list">
                 <li>Open blockchain for everyone</li>
-                <li>Support independent financial systems</li>
+                <li>Support independent systems</li>
                 <li>Simple and practical design</li>
                 <li>Low cost transactions</li>
             </ul>
@@ -1801,7 +1831,7 @@
         <p>&copy; 2025 BriXnetwork.org - Open Source Project</p>
         <p>Proof of Work blockchain for everyone</p>
         <p>Simple transactions and payments</p>
-        <p>We wish you happy mining. Be good and do good.</p>
+        <p class="final-message">We wish you happy mining. Be good and do good.</p>
     </footer>
 </body>
 </html>
