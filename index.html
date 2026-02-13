@@ -355,18 +355,7 @@
             text-shadow: 0 0 10px rgba(32, 178, 170, 0.5);
         }
 
-        .download-section > p {
-            color: #ccc;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            position: relative;
-            z-index: 1;
-            transition: color 0.3s ease;
-        }
-
-        .download-section:hover > p {
-            color: #fff;
-        }
+        /* The paragraph with the old message has been removed */
 
         .download-links {
             display: grid;
@@ -545,8 +534,6 @@
             z-index: 1;
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
-
-        /* Removed the old paragraph with the inactive message */
 
         .links-container {
             display: flex;
@@ -1051,11 +1038,6 @@
                 font-size: 1.3rem;
             }
 
-            .download-section > p,
-            .links-section > p {
-                font-size: 0.9rem;
-            }
-
             .download-links {
                 grid-template-columns: 1fr;
                 gap: 1rem;
@@ -1350,9 +1332,7 @@
                 description_1: "Experimental blockchain system. Built on proven libraries and solutions enabling both home users and corporate organizations to participate easily.",
                 description_2: "It is designed so that both home users and corporate users can easily use it.",
                 download: "Download BriXnetwork",
-                download_info: "Links will be active in the first quarter of January 2026",
                 resources: "Resources",
-                // resources_info removed because the paragraph no longer exists
                 github: "GitHub Repository",
                 whitepaper: "White Paper",
                 about_us: "About Us",
@@ -1392,9 +1372,7 @@
                 description_1: "Experimentelles Blockchain-System. Auf bewährten Bibliotheken und Lösungen aufgebaut, die es sowohl privaten Nutzern als auch Unternehmensorganisationen ermöglichen, einfach teilzunehmen.",
                 description_2: "Es ist so gestaltet, dass sowohl private Nutzer als auch Unternehmensnutzer es einfach verwenden können.",
                 download: "BriXnetwork herunterladen",
-                download_info: "Links werden im ersten Quartal Januar 2026 aktiv sein",
                 resources: "Ressourcen",
-                // resources_info removed
                 github: "GitHub Repository",
                 whitepaper: "Whitepaper",
                 about_us: "Über uns",
@@ -1434,9 +1412,7 @@
                 description_1: "प्रायोगिक ब्लॉकचेन प्रणाली। सिद्ध पुस्तकालयों और समाधानों पर बनाया गया है जो घरेलू उपयोगकर्ताओं और कॉर्पोरेट संगठनों दोनों को आसानी से भाग लेने में सक्षम बनाता है।",
                 description_2: "यह इस तरह से डिज़ाइन किया गया है कि घर के उपयोगकर्ता और कॉर्पोरेट उपयोगकर्ता दोनों इसे आसानी से उपयोग कर सकें।",
                 download: "BriXnetwork डाउनलोड करें",
-                download_info: "लिंक जनवरी 2026 की पहली तिमाही में सक्रिय होंगे",
                 resources: "संसाधन",
-                // resources_info removed
                 github: "GitHub रिपोजिटरी",
                 whitepaper: "श्वेतपत्र",
                 about_us: "हमारे बारे में",
@@ -1476,9 +1452,7 @@
                 description_1: "Експериментальна блокчейн система. Побудована на перевірених бібліотеках та рішеннях, що дозволяють як домашнім користувачам, так і корпоративним організаціям легко брати участь.",
                 description_2: "Він розроблений так, щоб як домашні користувачі, так і корпоративні користувачі могли його легко використовувати.",
                 download: "Завантажити BriXnetwork",
-                download_info: "Посилання будуть активні в першому кварталі січня 2026 року",
                 resources: "Ресурси",
-                // resources_info removed
                 github: "Репозиторій GitHub",
                 whitepaper: "Біла книга",
                 about_us: "Про нас",
@@ -1551,12 +1525,11 @@
                 document.querySelectorAll('.hero p')[1].textContent = t.description_2;
                 
                 document.querySelector('.download-section h3').textContent = t.download;
-                document.querySelectorAll('.download-section p')[0].textContent = t.download_info;
+                // The paragraph that used to show download_info is removed, so no line for it.
                 document.querySelectorAll('.download-btn')[0].textContent = t.windows;
                 document.querySelectorAll('.download-btn')[1].textContent = t.linux;
                 
                 document.querySelector('.links-section h3').textContent = t.resources;
-                // The paragraph inside .links-section has been removed – no translation for resources_info
                 document.querySelectorAll('.link-button')[0].textContent = t.github;
                 document.querySelectorAll('.link-button')[1].textContent = t.whitepaper;
                 
@@ -1660,8 +1633,11 @@
             }
         };
 
-        // Add click event listeners to all disabled links
+        // Note: There are no elements with class "disabled-link" anymore,
+        // so the terminator alert will only be triggered by links with href="#"
+        // (if any exist – currently there are none).
         document.addEventListener('DOMContentLoaded', function() {
+            // This selector will not match anything now because the class is removed.
             const disabledLinks = document.querySelectorAll('.disabled-link');
             disabledLinks.forEach(function(link) {
                 link.addEventListener('click', function(e) {
@@ -1750,18 +1726,16 @@
 
         <section class="download-section">
             <h3>Download BriXnetwork</h3>
-            <p>
-                Links will be active in the first quarter of January 2026
-            </p>
+            <!-- The outdated message has been removed -->
             <div class="download-links">
-                <a href="https://github.com/Heiwabit/brixnetwork-binaries/tree/main/BxnWin" class="download-btn disabled-link">BriXnetwork Windows Package</a>
-                <a href="https://github.com/Heiwabit/brixnetwork-binaries/tree/main/BxnLinux" class="download-btn disabled-link">BriXnetwork Linux Package</a>
+                <a href="https://github.com/Heiwabit/brixnetwork-binaries/tree/main/BriXWindows/v1.0.0" class="download-btn">BriXnetwork Windows Package</a>
+                <a href="https://github.com/Heiwabit/brixnetwork-binaries/tree/main/BriXLinux/v1.0.0" class="download-btn">BriXnetwork Linux Package</a>
             </div>
         </section>
 
         <section class="links-section">
             <h3>Resources</h3>
-            <!-- The old paragraph with "Links will be active..." has been removed -->
+            <!-- No message here -->
             <div class="links-container">
                 <!-- GitHub button: active + visible link below -->
                 <div style="text-align: center;">
