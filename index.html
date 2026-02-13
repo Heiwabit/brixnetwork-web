@@ -355,13 +355,22 @@
             text-shadow: 0 0 10px rgba(32, 178, 170, 0.5);
         }
 
-        /* The paragraph with the old message has been removed */
+        /* New subheadings for platforms */
+        .platform-subheading {
+            color: #00ffff;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.5rem 0;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid #20b2aa;
+            padding-bottom: 0.3rem;
+        }
 
         .download-links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.2rem;
-            margin-top: 1.5rem;
+            margin-top: 0.5rem;
             position: relative;
             z-index: 1;
         }
@@ -408,6 +417,14 @@
 
         .download-btn:active {
             transform: translateY(0);
+        }
+
+        /* Small note for file size/type */
+        .file-note {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 0.2rem;
+            text-align: center;
         }
 
         /* ============================================
@@ -789,49 +806,6 @@
             background: rgba(26, 26, 26, 0.9);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(32, 178, 170, 0.3);
-        }
-
-        /* ============================================
-           TERMINATOR ALERT
-           ============================================ */
-
-        .terminator-alert {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(26, 26, 26, 0.95);
-            border: 3px solid #00ffff;
-            padding: 3rem 4rem;
-            z-index: 10000;
-            font-family: 'Courier New', monospace;
-            color: #00ffff;
-            font-size: 1.5rem;
-            text-align: center;
-            animation: neon-glow 1.5s ease-in-out infinite alternate;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
-            border-radius: 8px;
-        }
-
-        @keyframes neon-glow {
-            from {
-                box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, inset 0 0 20px rgba(0, 255, 255, 0.1);
-            }
-            to {
-                box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff, 0 0 80px #00ffff, inset 0 0 30px rgba(0, 255, 255, 0.2);
-            }
-        }
-
-        .terminator-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 9999;
-            backdrop-filter: blur(5px);
         }
 
         /* ============================================
@@ -1361,8 +1335,9 @@
                 footer_2: "Proof of Work blockchain for everyone",
                 footer_3: "Simple transactions and payments",
                 footer_4: "We wish you happy mining. Be good and do good.",
-                windows: "BriXnetwork Windows Package",
-                linux: "BriXnetwork Linux Package",
+                windows_portable: "Windows (Portable ZIP)",
+                windows_setup: "Windows (Setup EXE)",
+                linux_binary: "Linux (tar.gz)",
                 cookieText: "This website uses essential cookies to improve your experience and ensure proper functionality. Your privacy is important to us.",
                 acceptBtn: "ACCEPT",
                 declineBtn: "DECLINE"
@@ -1401,8 +1376,9 @@
                 footer_2: "Proof of Work Blockchain für alle",
                 footer_3: "Einfache Transaktionen und Zahlungen",
                 footer_4: "Wir wünschen Ihnen erfolgreiches Mining. Seien Sie gut und tun Sie Gutes.",
-                windows: "BriXnetwork Windows-Paket",
-                linux: "BriXnetwork Linux-Paket",
+                windows_portable: "Windows (Portable ZIP)",
+                windows_setup: "Windows (Setup EXE)",
+                linux_binary: "Linux (tar.gz)",
                 cookieText: "Diese Website verwendet essentielle Cookies, um Ihre Erfahrung zu verbessern und die ordnungsgemäße Funktionalität sicherzustellen. Ihre Privatsphäre ist uns wichtig.",
                 acceptBtn: "AKZEPTIEREN",
                 declineBtn: "ABLEHNEN"
@@ -1441,8 +1417,9 @@
                 footer_2: "सभी के लिए प्रूफ ऑफ वर्क ब्लॉकचेन",
                 footer_3: "सरल लेनदेन और भुगतान",
                 footer_4: "हम आपको खुशखनिकी की कामना करते हैं। अच्छे बनो और अच्छा करो।",
-                windows: "BriXnetwork विंडोज पैकेज",
-                linux: "BriXnetwork लिनक्स पैकेज",
+                windows_portable: "Windows (पोर्टेबल ZIP)",
+                windows_setup: "Windows (सेटअप EXE)",
+                linux_binary: "Linux (tar.gz)",
                 cookieText: "यह वेबसाइट आपके अनुभव को बेहतर बनाने और उचित कार्यप्रणाली सुनिश्चित करने के लिए आवश्यक कुकीज़ का उपयोग करती है। आपकी गोपनीयता हमारे लिए महत्वपूर्ण है।",
                 acceptBtn: "स्वीकार करें",
                 declineBtn: "अस्वीकार करें"
@@ -1481,8 +1458,9 @@
                 footer_2: "Proof of Work блокчейн для всіх",
                 footer_3: "Прості транзакції та платежі",
                 footer_4: "Бажаємо вам щасливого видобутку. Будьте добрими та робіть добро.",
-                windows: "Пакет BriXnetwork для Windows",
-                linux: "Пакет BriXnetwork для Linux",
+                windows_portable: "Windows (портативний ZIP)",
+                windows_setup: "Windows (інсталятор EXE)",
+                linux_binary: "Linux (tar.gz)",
                 cookieText: "Цей веб-сайт використовує необхідні файли cookie для покращення вашого досвіду та забезпечення належного функціонування. Ваша конфіденційність важлива для нас.",
                 acceptBtn: "ПРИЙНЯТИ",
                 declineBtn: "ВІДХИЛИТИ"
@@ -1525,9 +1503,14 @@
                 document.querySelectorAll('.hero p')[1].textContent = t.description_2;
                 
                 document.querySelector('.download-section h3').textContent = t.download;
-                // The paragraph that used to show download_info is removed, so no line for it.
-                document.querySelectorAll('.download-btn')[0].textContent = t.windows;
-                document.querySelectorAll('.download-btn')[1].textContent = t.linux;
+                
+                // Update download button texts
+                const downloadButtons = document.querySelectorAll('.download-btn');
+                if (downloadButtons.length >= 3) {
+                    downloadButtons[0].textContent = t.windows_portable;
+                    downloadButtons[1].textContent = t.windows_setup;
+                    downloadButtons[2].textContent = t.linux_binary;
+                }
                 
                 document.querySelector('.links-section h3').textContent = t.resources;
                 document.querySelectorAll('.link-button')[0].textContent = t.github;
@@ -1616,7 +1599,6 @@
             document.getElementById('cookieConsent').style.display = 'none';
         }
 
-        // Check if user has already responded to cookie consent
         window.onload = function() {
             const savedLang = localStorage.getItem('brixnetwork_lang');
             if (savedLang && translations[savedLang]) {
@@ -1633,32 +1615,7 @@
             }
         };
 
-        // Note: There are no elements with class "disabled-link" anymore,
-        // so the terminator alert will only be triggered by links with href="#"
-        // (if any exist – currently there are none).
-        document.addEventListener('DOMContentLoaded', function() {
-            // This selector will not match anything now because the class is removed.
-            const disabledLinks = document.querySelectorAll('.disabled-link');
-            disabledLinks.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showTerminatorAlert();
-                    return false;
-                });
-            });
-
-            const inactiveLinks = document.querySelectorAll('a[href="#"]');
-            inactiveLinks.forEach(function(link) {
-                if (!link.classList.contains('disabled-link')) {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        showTerminatorAlert();
-                        return false;
-                    });
-                }
-            });
-        });
-
+        // No disabled links anymore, but keep the function for any potential future use
         function showTerminatorAlert() {
             const overlay = document.createElement('div');
             overlay.className = 'terminator-overlay';
@@ -1726,16 +1683,35 @@
 
         <section class="download-section">
             <h3>Download BriXnetwork</h3>
-            <!-- The outdated message has been removed -->
+
+            <!-- Windows packages -->
+            <div class="platform-subheading">Windows</div>
             <div class="download-links">
-                <a href="https://github.com/Heiwabit/brixnetwork-binaries/tree/main/BriXWindows/v1.0.0" class="download-btn">BriXnetwork Windows Package</a>
-                <a href="https://github.com/Heiwabit/brixnetwork-binaries/tree/main/BriXLinux/v1.0.0" class="download-btn">BriXnetwork Linux Package</a>
+                <a href="https://github.com/Heiwabit/brixnetwork-binaries/raw/main/BriXWindows/v1.0.0/brixnetwork-1.0.0-win64-portable.zip" 
+                   class="download-btn" 
+                   download>Windows (Portable ZIP)</a>
+                <a href="https://github.com/Heiwabit/brixnetwork-binaries/raw/main/BriXWindows/v1.0.0/brixnetwork-1.0.0-win64-setup.exe" 
+                   class="download-btn" 
+                   download>Windows (Setup EXE)</a>
             </div>
+
+            <!-- Linux packages -->
+            <div class="platform-subheading" style="margin-top: 1.5rem;">Linux</div>
+            <div class="download-links">
+                <a href="https://github.com/Heiwabit/brixnetwork-binaries/raw/main/BriXLinux/v1.0.0/brixnetwork-1.0.0-x86_64-linux-gnu.tar.gz" 
+                   class="download-btn" 
+                   download>Linux (tar.gz)</a>
+            </div>
+
+            <!-- Optional: note about signatures 
+            <p style="color: #aaa; font-size: 0.8rem; margin-top: 1rem;">
+                SHA256SUMS and .asc signature files are available in the 
+                <a href="https://github.com/Heiwabit/brixnetwork-binaries" style="color: #00ffff;">GitHub repository</a>.
+            </p> -->
         </section>
 
         <section class="links-section">
             <h3>Resources</h3>
-            <!-- No message here -->
             <div class="links-container">
                 <!-- GitHub button: active + visible link below -->
                 <div style="text-align: center;">
