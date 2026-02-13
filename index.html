@@ -546,18 +546,7 @@
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
-        .links-section > p {
-            color: #ccc;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            position: relative;
-            z-index: 1;
-            transition: color 0.3s ease;
-        }
-
-        .links-section:hover > p {
-            color: #fff;
-        }
+        /* Removed the old paragraph with the inactive message */
 
         .links-container {
             display: flex;
@@ -1363,7 +1352,7 @@
                 download: "Download BriXnetwork",
                 download_info: "Links will be active in the first quarter of January 2026",
                 resources: "Resources",
-                resources_info: "Links will be active in the first quarter of January 2026",
+                // resources_info removed because the paragraph no longer exists
                 github: "GitHub Repository",
                 whitepaper: "White Paper",
                 about_us: "About Us",
@@ -1405,7 +1394,7 @@
                 download: "BriXnetwork herunterladen",
                 download_info: "Links werden im ersten Quartal Januar 2026 aktiv sein",
                 resources: "Ressourcen",
-                resources_info: "Links werden im ersten Quartal Januar 2026 aktiv sein",
+                // resources_info removed
                 github: "GitHub Repository",
                 whitepaper: "Whitepaper",
                 about_us: "Über uns",
@@ -1447,7 +1436,7 @@
                 download: "BriXnetwork डाउनलोड करें",
                 download_info: "लिंक जनवरी 2026 की पहली तिमाही में सक्रिय होंगे",
                 resources: "संसाधन",
-                resources_info: "लिंक जनवरी 2026 की पहली तिमाही में सक्रिय होंगे",
+                // resources_info removed
                 github: "GitHub रिपोजिटरी",
                 whitepaper: "श्वेतपत्र",
                 about_us: "हमारे बारे में",
@@ -1489,7 +1478,7 @@
                 download: "Завантажити BriXnetwork",
                 download_info: "Посилання будуть активні в першому кварталі січня 2026 року",
                 resources: "Ресурси",
-                resources_info: "Посилання будуть активні в першому кварталі січня 2026 року",
+                // resources_info removed
                 github: "Репозиторій GitHub",
                 whitepaper: "Біла книга",
                 about_us: "Про нас",
@@ -1567,7 +1556,7 @@
                 document.querySelectorAll('.download-btn')[1].textContent = t.linux;
                 
                 document.querySelector('.links-section h3').textContent = t.resources;
-                document.querySelectorAll('.links-section p')[0].textContent = t.resources_info;
+                // The paragraph inside .links-section has been removed – no translation for resources_info
                 document.querySelectorAll('.link-button')[0].textContent = t.github;
                 document.querySelectorAll('.link-button')[1].textContent = t.whitepaper;
                 
@@ -1772,11 +1761,16 @@
 
         <section class="links-section">
             <h3>Resources</h3>
-            <p>
-                Links will be active in the first quarter of January 2026
-            </p>
+            <!-- The old paragraph with "Links will be active..." has been removed -->
             <div class="links-container">
-                <a href="https://github.com/Heiwabit/brixnetwork.git" class="link-button disabled-link">GitHub Repository</a>
+                <!-- GitHub button: active + visible link below -->
+                <div style="text-align: center;">
+                    <a href="https://github.com/Heiwabit/brixnetwork.git" class="link-button">GitHub Repository</a>
+                    <div style="margin-top: 8px; font-size: 0.85rem;">
+                        <a href="https://github.com/Heiwabit/brixnetwork.git" style="color: #00ffff; text-decoration: none; word-break: break-all;">https://github.com/Heiwabit/brixnetwork.git</a>
+                    </div>
+                </div>
+                <!-- White Paper button: fully active -->
                 <a href="https://raw.githubusercontent.com/Heiwabit/BriXNetworkWhitepaper/refs/heads/main/BriXNetworkWhitepaper_EN.md" class="link-button" download="BriXNetwork_Whitepaper_EN.md">White Paper</a>
             </div>
         </section>
