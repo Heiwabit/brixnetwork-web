@@ -355,7 +355,6 @@
             text-shadow: 0 0 10px rgba(32, 178, 170, 0.5);
         }
 
-        /* New subheadings for platforms */
         .platform-subheading {
             color: #00ffff;
             font-size: 1.3rem;
@@ -417,14 +416,6 @@
 
         .download-btn:active {
             transform: translateY(0);
-        }
-
-        /* Small note for file size/type */
-        .file-note {
-            font-size: 0.8rem;
-            color: #aaa;
-            margin-top: 0.2rem;
-            text-align: center;
         }
 
         /* ============================================
@@ -1504,7 +1495,6 @@
                 
                 document.querySelector('.download-section h3').textContent = t.download;
                 
-                // Update download button texts
                 const downloadButtons = document.querySelectorAll('.download-btn');
                 if (downloadButtons.length >= 3) {
                     downloadButtons[0].textContent = t.windows_portable;
@@ -1614,30 +1604,6 @@
                 document.getElementById('cookieConsent').style.display = 'block';
             }
         };
-
-        // No disabled links anymore, but keep the function for any potential future use
-        function showTerminatorAlert() {
-            const overlay = document.createElement('div');
-            overlay.className = 'terminator-overlay';
-            
-            const alert = document.createElement('div');
-            alert.className = 'terminator-alert';
-            alert.innerHTML = `
-                <div style="margin-bottom: 1rem; font-size: 1.5rem; font-weight: bold;">COMING SOON</div>
-                <div style="margin-bottom: 2rem; font-size: 1rem; line-height: 1.8;">Installation packages and source code will be available for download in the first quarter of January 2026</div>
-                <div style="margin-top: 2rem; cursor: pointer; font-size: 1rem; color: #00ffff; text-decoration: underline;" onclick="closeTerminatorAlert()">[CLOSE]</div>
-            `;
-            
-            document.body.appendChild(overlay);
-            document.body.appendChild(alert);
-        }
-
-        function closeTerminatorAlert() {
-            const overlay = document.querySelector('.terminator-overlay');
-            const alert = document.querySelector('.terminator-alert');
-            if (overlay) overlay.remove();
-            if (alert) alert.remove();
-        }
     </script>
 
     <div class="header-section">
@@ -1684,30 +1650,24 @@
         <section class="download-section">
             <h3>Download BriXnetwork</h3>
 
-            <!-- Windows packages -->
+            <!-- Windows packages (v1.1.0) -->
             <div class="platform-subheading">Windows</div>
             <div class="download-links">
-                <a href="https://github.com/Heiwabit/brixnetwork-binaries/raw/main/BriXWindows/v1.0.0/brixnetwork-1.0.0-win64-portable.zip" 
+                <a href="https://raw.githubusercontent.com/Heiwabit/brixnetwork-binaries/main/BriXWindows/v1.1.0/brixnetwork-1.1.0-win64-portable.zip" 
                    class="download-btn" 
                    download>Windows (Portable ZIP)</a>
-                <a href="https://github.com/Heiwabit/brixnetwork-binaries/raw/main/BriXWindows/v1.0.0/brixnetwork-1.0.0-win64-setup.exe" 
+                <a href="https://raw.githubusercontent.com/Heiwabit/brixnetwork-binaries/main/BriXWindows/v1.1.0/brixnetwork-1.1.0-win64-setup.exe" 
                    class="download-btn" 
                    download>Windows (Setup EXE)</a>
             </div>
 
-            <!-- Linux packages -->
+            <!-- Linux packages (v1.1.0) -->
             <div class="platform-subheading" style="margin-top: 1.5rem;">Linux</div>
             <div class="download-links">
-                <a href="https://github.com/Heiwabit/brixnetwork-binaries/raw/main/BriXLinux/v1.0.0/brixnetwork-1.0.0-x86_64-linux-gnu.tar.gz" 
+                <a href="https://raw.githubusercontent.com/Heiwabit/brixnetwork-binaries/main/BriXLinux/v1.1.0/brixnetwork-1.1.0-x86_64-linux-gnu.tar.gz" 
                    class="download-btn" 
                    download>Linux (tar.gz)</a>
             </div>
-
-            <!-- Optional: note about signatures 
-            <p style="color: #aaa; font-size: 0.8rem; margin-top: 1rem;">
-                SHA256SUMS and .asc signature files are available in the 
-                <a href="https://github.com/Heiwabit/brixnetwork-binaries" style="color: #00ffff;">GitHub repository</a>.
-            </p> -->
         </section>
 
         <section class="links-section">
